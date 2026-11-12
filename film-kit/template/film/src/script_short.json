@@ -1,0 +1,14 @@
+{
+ "about": "竖屏短版（1080×1920）口播稿，结构：钩子 → 证据 → 要点 → 去哪看完整的。没有通用片头片尾。{名字} 还是画面对点标记。改了要重跑 .\\film.cmd voice short。",
+ "chapters": [
+  {"id": "short", "zh": "短版"}
+ ],
+ "items": [
+  {"id": "s1", "ch": "short", "padBefore": 0.2, "zh": "{hook}改一句稿子，{redo}全片都要返工？"},
+  {"id": "s2", "ch": "short", "zh": "{proof}这条片子，{cmd}是一条命令跑出来的。"},
+  {"id": "s3", "ch": "short", "zh": "{mark}稿子带标记，{sync}画面按标记自己对上。"},
+  {"id": "s4", "ch": "short", "zh": "{resume}渲染断了接着跑，{probe}字出框会自动报出来。"},
+  {"id": "s5", "ch": "short", "padAfter": 0.2, "zh": "{more}完整版在主页，{group}有问题来群里问。"},
+  {"bubble": "q1", "ch": "short", "pose": "victory", "dur": 1.4, "zh": "懒鱼！开工！"}
+ ]
+}

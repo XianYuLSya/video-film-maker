@@ -1,0 +1,11 @@
+# 片场 Python 环境（film-kit\.venv）
+# 重建（在片场根目录下，用你自己的 Python 3.11）：
+#       python -m venv .venv
+#       .venv\Scripts\python.exe -m pip install -r requirements.txt
+# 实测版本见文件末尾注释，装机时按这组版本核对。
+numpy>=2.0,<3
+scipy>=1.13,<2
+pillow>=10,<14
+edge-tts>=7.0,<8
+
+# 实测：python 3.11.9 / numpy 2.4.6 / scipy 1.17.1 / pillow 13.0.0 / edge-tts 7.3.1

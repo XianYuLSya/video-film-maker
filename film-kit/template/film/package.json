@@ -1,0 +1,5 @@
+{
+  "name": "film",
+  "private": true,
+  "description": "依赖装在片场根目录 film-kit/node_modules（新片用目录联接指过去），这里不要 npm install"
+}

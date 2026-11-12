@@ -1,0 +1,96 @@
+{
+ "_说明": "作品配置。这个文件是本片的唯一开关：脚本里不再写死作品名、路径、念法、配乐。改完存成 UTF-8，然后跑 .\\film.cmd status 看下一步该干什么。带下划线开头的键都是说明，程序不读。",
+ "_说明_name": "作品名。tools/new_film.py 开新片时，工程建在片场 kit.local.json 的 workRoot\\<作品名>，成品目录是 outRoot\\<作品名>（没有 kit.local.json 时分别是片场的 works\\ 和 成品\\）。",
+ "name": "示范片",
+ "_说明_outDir": "成品目录（字幕、成片都写这里）。绝对路径，或相对作品根；留空则用作品根的 成品\\<name>。自检片请改到工程目录下，别写进真正的成品目录。",
+ "outDir": "成品",
+ "_说明_versions": "这部片子做哪几版：[\"zh\"] 表示只做正片、这部片子不做短版；[\"zh\", \"short\"] 是正片 + 竖屏短版（默认，不写这个键也是这个）。关掉短版之后，lint / status / all 都不再处理、也不打印 short，.\\film.cmd <命令> short 会直接提示「这部片子的 film.json 没有开短版」。",
+ "versions": ["zh", "short"],
+ "_说明_videos": "每一版成片的文件名：zh 是正片，short 是竖屏短版。目标已存在时会先改名成「…_备份<时间戳>.mp4」再写。",
+ "videos": {
+  "zh": "咸鱼凌生_示范片_1080p60.mp4",
+  "short": "咸鱼凌生_示范片_竖屏短版_1080x1920.mp4"
+ },
+ "_说明_srts": "每一版字幕的文件名（写在成品目录里）。",
+ "srts": {
+  "zh": "字幕_中文.srt",
+  "short": "字幕_短版_中文.srt"
+ },
+ "_说明_comps": "Remotion 里对应的合成名（film/src/Root.tsx 注册的 id）。",
+ "comps": {
+  "zh": "FilmZh",
+  "short": "ShortZh"
+ },
+ "_说明_sfxComps": "导出音效清单用的合成名（只是个空壳合成，用来让画面代码把音效事件吐出来）。",
+ "sfxComps": {
+  "zh": "SfxList",
+  "short": "SfxListShort"
+ },
+ "_说明_voice": "音色和语速（edge-tts）。zh / short 可以不一样；短版念快一点更合适。",
+ "voice": {
+  "zh": {"voice": "zh-CN-XiaoyiNeural", "rate": "-3%"},
+  "short": {"voice": "zh-CN-XiaoyiNeural", "rate": "-3%"}
+ },
+ "_说明_say": "念法替换表：只影响念出来的音，字幕仍按稿子原文。缩写按字母念、群号按单个数字念。顺序有意义，长的写前面。",
+ "say": [
+  ["DSH", "D S H"],
+  ["FAQ", "F A Q"],
+  ["README", "read me"],
+  ["LUFS", "loudness units"]
+ ],
+ "_说明_submax": "一条字幕最多显示多少宽度（汉字算 1，英文字母算 0.55）。竖屏窄，短版要更小。",
+ "submax": {"zh": 17, "short": 12},
+ "_说明_pacing": "配音排时间线用的留白（秒）。gap 句与句之间；chapterGap 换章多留；leadLine 换章后第一句前；leadBubble 换章后先是气泡时；bubbleGap 气泡后；tail 片尾多留。可以在 zh / short 里分别覆盖。chapterGap + leadLine 就是换章过场能用的时间：示范片的过场从章节开始前 0.8 秒推进来、第一句开口后 0.05 秒推走，时长 = 0.8 + leadLine + 0.05；标题要能读 1.2 秒以上，过场至少 1.9 秒，所以 leadLine 不要低于 1.05、chapterGap 不要低于 0.8（现值 0.9 / 1.2，过场约 2.05 秒、标题清楚可读约 1.4 秒）。不用换章过场的片子可以改回 0.75 / 0.55。",
+ "pacing": {
+  "gap": 0.34,
+  "chapterGap": 0.9,
+  "leadLine": 1.2,
+  "leadBubble": 1.0,
+  "bubbleGap": 0.15,
+  "tail": 0.5,
+  "short": {"gap": 0.2, "chapterGap": 0.3, "leadLine": 0.2, "tail": 0.4}
+ },
+ "_说明_stings": "要不要通用片头片尾（public/intro.mp4、outro.mp4）。只管这两条：true 时稿子里的 sting: intro / outro 才算进时间表；false 时只把 id 为 intro / outro 的这两条剔掉。自己起名的垫片（例如 {\"sting\": \"open\", \"dur\": 12}，品牌动画里用它占住没有口播的段落）不受影响，照常进时间表。竖屏短版一般不要通用片头片尾。",
+ "stings": true,
+ "_说明_music": "配乐编排。最简：只写 default 一首铺满全片。进阶：写 segments，每段 {from,to,track,bar,sync,loop}——from/to 写 ch:章节 / line:句子 / sting:片头 / sec:秒数；bar 从第几小节起；sync 写「句子.标记」让那个标记正好落在 bar 小节上；loop 是 [起小节,止小节]。segments 也可以写成 {\"zh\": [...], \"short\": [...]}，两版各用各的（短版没有片头片尾，不能照抄正片的分段）。内置曲目只有 cat / tonight / house 三首测过拍长；别的曲子要在 tracks 里写 {file:'xxx.mp3'}，那就只能整首铺、不能对小节。duck 是压低电平（dB）：speak 说话时、gap 句间、bubble 气泡时、sting 片头片尾时、open 放开的段落；openUp 列出要放开的（\"bubble:q2\" 这种）。",
+ "_说明_music_dir": "曲库目录写在 music.dir（绝对路径，或相对作品根）；留空就用片场的 local/bgm/。配乐文件不随片场分发，各人放各人的（内置三首的文件名和来源见片场的 素材自备.md）；曲目的 file 写相对这个目录的文件名，也可以直接写绝对路径。自己的曲子在 music.tracks 里登记：{曲名: {file: xxx.mp3, beat: 一拍秒数, phase: 第一拍在文件里的秒数}}，beat 和 phase 用片场的 tools/beat_probe.py 量；登记了 beat 的曲子才能对小节、才能当拍子网格。",
+ "_说明_music_grid": "按拍排时间的片子（无口播的产品片、品牌片）再加 music.grid：{track: 曲名, from: sec:0}，意思是全片的拍子按这首曲子的拍长走、第 0 拍落在成片的哪里。有了它：稿子里的垫片可以写 beats（占几拍）代替 dur；配乐段落的 from / to 可以写 beat:拍号；画面里用 cine 的 B(拍号) 取时间。这类片子把 duck.sting 设成 0（垫片不是片头片尾，不用压配乐）、pacing.tail 设成 0。",
+ "music": {
+  "default": "cat",
+  "dir": "",
+  "segments": {
+   "zh": [
+    {"from": "sec:0", "to": "sting:intro", "track": "house", "bar": 0, "loop": [0, 16]},
+    {"from": "ch:a", "track": "cat", "bar": 16, "sync": "a1.line", "loop": [16, 48]}
+   ],
+   "short": [
+    {"from": "sec:0", "track": "cat", "bar": 16, "loop": [16, 48]}
+   ]
+  },
+  "tracks": {},
+  "duck": {"speak": -15.0, "gap": -8.0, "bubble": -6.0, "sting": -14.0, "open": -3.0},
+  "openUp": ["bubble:q1", "bubble:q2"],
+  "fadeIn": 0.4,
+  "fadeOut": 1.6,
+  "level": -16.0
+ },
+ "_说明_render": "分段渲染：chunk 每段多少帧（每段起一个新浏览器，越小越不容易崩、但启动开销大）；concurrency 并发（默认 4，失败自动降到 retryConcurrency 再试一次）；crf 画质（17 是现有片子的值）；browser 留空则依次找环境变量 FILM_BROWSER、片场 kit.local.json 的 browser，都没有就交给 Remotion 自己找。",
+ "render": {
+  "chunk": 3000,
+  "concurrency": 4,
+  "retryConcurrency": 2,
+  "crf": 17,
+  "timeout": 120000,
+  "gl": "angle",
+  "browser": ""
+ },
+ "_说明_dirs": "中间文件目录（build：分段、音效清单、日志、拼接结果）和审片目录（review：抽帧、清单、体检表、片段）。相对路径按作品根算。",
+ "dirs": {"build": "build", "review": "review"},
+ "_说明_expect": "成片体检时该是什么规格。错了就报错。",
+ "expect": {
+  "zh": {"width": 1920, "height": 1080, "fps": 60},
+  "short": {"width": 1080, "height": 1920, "fps": 60}
+ },
+ "_说明_audio": "混音目标：整体响度 lufs（可差 lufsTol），真峰值不超过 truePeak。alsoNoMusic 写 true 时，audio 另出一条不带配乐的混音、mux 另合一条「…_无配乐.mp4」（画面相同，声音只有人声和音效）。",
+ "audio": {"lufs": -14.0, "lufsTol": 1.0, "truePeak": -1.5, "alsoNoMusic": false}
+}

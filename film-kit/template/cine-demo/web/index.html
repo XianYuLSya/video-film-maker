@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>示例看板</title>
+<!-- 镜头包陈列片用的中性示例界面：一个虚构的「仓储看板」。纯静态，数据全是编的。
+     它是浅色界面，用来说明镜头包不绑定某个产品、也不绑定深色主题。 -->
+<style>
+  :root { --bg:#f3f5f8; --surface:#ffffff; --line:#dfe4ec; --text:#1b2330; --text-2:#55627a; --text-3:#8491a6; --accent:#2f6df6; --info:#0aa5a5; --ok:#19a974; --warn:#e8930c; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html,body { width:100%; height:100%; background:var(--bg); color:var(--text); font:14px/1.45 "Segoe UI","PingFang SC","Microsoft YaHei UI",system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  .app { display:flex; height:100%; }
+  .rail { width:64px; background:#101828; display:flex; flex-direction:column; align-items:center; padding:18px 0; gap:22px; }
+  .logo { width:34px; height:34px; border-radius:10px; background:linear-gradient(140deg,#5b8dff,#2f6df6); position:relative; }
+  .logo::after { content:""; position:absolute; inset:9px; border:3px solid #fff; border-radius:5px; border-right-color:transparent; }
+  .nav { width:22px; height:22px; border-radius:6px; background:#2a364c; }
+  .nav.on { background:#5b8dff; }
+  main { flex:1; padding:26px 30px; overflow:hidden; }
+  h1 { font-size:26px; font-weight:700; letter-spacing:-0.01em; }
+  .sub { display:flex; gap:8px; margin-top:10px; }
+  .chip { display:inline-flex; align-items:center; gap:6px; height:26px; padding:0 11px; border-radius:13px; border:1px solid var(--line); background:var(--surface); color:var(--text-2); font-size:12.5px; font-weight:600; }
+  .chip i { width:7px; height:7px; border-radius:50%; background:var(--ok); }
+  .chip.blue { color:var(--accent); border-color:#c9d9ff; background:#eef3ff; }
+  .kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:22px; }
+  .kpi { background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:16px 18px 14px; }
+  .kpi.on { border-color:var(--accent); box-shadow:0 0 0 2px #dbe6ff; }
+  .kpi-label { color:var(--text-3); font-size:12.5px; font-weight:600; }
+  .kpi-value { font-size:30px; font-weight:750; letter-spacing:-0.02em; margin-top:4px; font-variant-numeric:tabular-nums; }
+  .kpi-foot { color:var(--ok); font-size:12px; font-weight:600; margin-top:2px; }
+  .cols { display:grid; grid-template-columns:1.55fr 1fr; gap:16px; margin-top:16px; }
+  .panel { background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:16px 18px; }
+  .panel h2 { font-size:15px; font-weight:700; }
+  .panel p { color:var(--text-3); font-size:12.5px; margin-top:2px; }
+  .row { display:grid; grid-template-columns:34px 1.3fr 1fr 150px 70px; align-items:center; gap:12px; height:54px; margin-top:8px; padding:0 12px; border:1px solid var(--line); border-radius:11px; background:#fbfcfe; }
+  .row.on { border-color:var(--accent); background:#f4f8ff; }
+  .dot { width:30px; height:30px; border-radius:9px; background:#e6ecf7; }
+  .row b { font-size:14px; font-weight:700; }
+  .row span { color:var(--text-2); font-size:12.5px; }
+  .bar { height:7px; border-radius:4px; background:#e3e8f0; position:relative; overflow:hidden; }
+  .bar u { position:absolute; left:0; top:0; bottom:0; border-radius:4px; background:var(--accent); }
+  .pill { justify-self:end; height:22px; padding:0 9px; border-radius:11px; font-size:12px; font-weight:700; display:inline-flex; align-items:center; color:var(--ok); background:#e3f6ee; }
+  .pill.w { color:var(--warn); background:#fdf1dc; }
+  label { display:block; margin-top:14px; color:var(--text-2); font-size:12.5px; font-weight:700; }
+  input,select { display:block; width:100%; height:36px; margin-top:6px; padding:0 11px; border:1px solid var(--line); border-radius:9px; background:#fff; color:var(--text); font:600 14px/1 inherit; font-family:inherit; outline:none; appearance:none; }
+  .btn { margin-top:18px; height:38px; padding:0 18px; border:0; border-radius:9px; background:var(--accent); color:#fff; font:700 14px/1 inherit; font-family:inherit; }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="rail"><div class="logo" id="logo"></div><div class="nav on"></div><div class="nav"></div><div class="nav"></div><div class="nav"></div></div>
+  <main>
+    <h1 id="title">东区仓库</h1>
+    <div class="sub">
+      <span class="chip"><i></i>在线</span>
+      <span class="chip">上海 · 浦东</span>
+      <span class="chip blue">盘点 100%</span>
+      <span class="chip">今日 3 班</span>
+    </div>
+    <div class="kpis">
+      <div class="kpi on"><div class="kpi-label">今日出库</div><div class="kpi-value">1,284</div><div class="kpi-foot">↑ 12.4%</div></div>
+      <div class="kpi"><div class="kpi-label">在库件数</div><div class="kpi-value">36,502</div><div class="kpi-foot">↑ 2.1%</div></div>
+      <div class="kpi"><div class="kpi-label">准时率</div><div class="kpi-value">98.6%</div><div class="kpi-foot">持平</div></div>
+      <div class="kpi"><div class="kpi-label">平均分拣</div><div class="kpi-value">4.2 分钟</div><div class="kpi-foot">↓ 0.3</div></div>
+    </div>
+    <div class="cols">
+      <div class="panel">
+        <h2>货架</h2><p>每排货架的占用和状态</p>
+        <div class="row on"><div class="dot"></div><b>A 排 · 常温</b><span>纸品、日用</span><div class="bar"><u style="width:82%"></u></div><div class="pill">正常</div></div>
+        <div class="row"><div class="dot"></div><b>B 排 · 常温</b><span>小家电</span><div class="bar"><u style="width:64%"></u></div><div class="pill">正常</div></div>
+        <div class="row"><div class="dot"></div><b>C 排 · 冷藏</b><span>乳品、饮料</span><div class="bar"><u style="width:91%"></u></div><div class="pill w">将满</div></div>
+        <div class="row"><div class="dot"></div><b>D 排 · 贵重</b><span>数码配件</span><div class="bar"><u style="width:38%"></u></div><div class="pill">正常</div></div>
+      </div>
+      <div class="panel" id="form">
+        <h2>新建调拨单</h2><p>起个名字，选一个目的仓</p>
+        <label>单名</label><input id="name" value="周末补货">
+        <label>目的仓</label><select id="dest"><option>杭州 · 萧山 02</option><option>南京 · 江宁 01</option></select>
+        <button class="btn" id="submit">创建调拨单</button>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

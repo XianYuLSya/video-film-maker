@@ -1,0 +1,47 @@
+# 运行时和环境（各人自己装：npm install、python -m venv .venv）
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+
+# 本机配置和自备素材（不能随仓库分发，见 素材自备.md）
+kit.local.json
+local/
+**/film/public/sfx/
+**/film/public/intro.mp4
+**/film/public/outro.mp4
+**/film/public/vo/
+
+# 渲染中间文件、审片帧、成片
+build/
+review/
+
+# 例外：模板里的「合格样本帧」（skill 里点名要对着它比）。仓库只带缩小后的代表性帧和各自的 index.md，
+# 其余帧在实际做片时自己生成，不进仓库。
+!template/review/
+template/review/*
+!template/review/final_zh/
+!template/review/final_short/
+template/review/final_zh/*
+template/review/final_short/*
+!template/review/final_zh/*.png
+!template/review/final_zh/index.md
+!template/review/final_short/*.png
+!template/review/final_short/index.md
+out/
+成品/
+works/
+_gallery/
+clean/
+*.mp4
+*.mov
+*.wav
+*.mp3
+*.tmp.*
+tts_cache/
+chunks_*/
+
+# 系统
+Thumbs.db
+desktop.ini
+.DS_Store

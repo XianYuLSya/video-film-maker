@@ -1,0 +1,9 @@
+{
+ "_说明": "无口播的产品片：一个镜头一个垫片，beats 是它占几拍（一拍多长来自 film.json 的 music.grid）。全放在一个章节里。改完跑 .\\film.cmd voice zh（不联网，只算时间表）。",
+ "chapters": [{"id": "film", "zh": "正片"}],
+ "items": [
+  {"ch": "film", "sting": "board", "beats": 8},
+  {"ch": "film", "sting": "form", "beats": 8},
+  {"ch": "film", "sting": "end", "beats": 12}
+ ]
+}

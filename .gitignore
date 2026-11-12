@@ -1,0 +1,9 @@
+# 运行时垃圾：skills 下的脚本跑一次就会生成 __pycache__
+__pycache__/
+*.pyc
+*.pyo
+
+# 系统
+Thumbs.db
+desktop.ini
+.DS_Store

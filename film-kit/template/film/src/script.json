@@ -1,0 +1,28 @@
+{
+ "about": "口播稿唯一正文。{名字} 是画面对点用的标记，念的时候去掉；bubble 是小咸鱼的无声气泡（不念，只显示，id 用 q 开头）；sting 是频道通用的片头片尾；padBefore / padAfter 是这句前后额外留的秒数。句子 id = 章节首字母 + 序号。改了这里要重跑 .\\film.cmd voice zh。",
+ "chapters": [
+  {"id": "hook", "zh": "开场：这期讲什么"},
+  {"id": "a", "zh": "一：稿子带标记"},
+  {"id": "b", "zh": "二：画面对标记"},
+  {"id": "c", "zh": "三：一条命令出片"},
+  {"id": "end", "zh": "收尾"}
+ ],
+ "items": [
+  {"id": "h1", "ch": "hook", "padBefore": 0.3, "zh": "{a}剪片累，{b}配音对不上，{c}改一句全片返工？"},
+  {"id": "h2", "ch": "hook", "zh": "{land}这期看片场怎么一条命令出片。"},
+  {"id": "h3", "ch": "hook", "padAfter": 0.3, "zh": "{road}三件事：{s1}稿子带标记，{s2}画面对标记，{s3}一条命令出片。"},
+  {"sting": "intro", "ch": "hook", "dur": 4.0},
+  {"id": "a1", "ch": "a", "zh": "{line}稿子一句一条，{mark}要出画面的词前面放个标记。"},
+  {"id": "a2", "ch": "a", "zh": "{bubble}气泡、{sting}片头片尾，也写在稿子里。"},
+  {"bubble": "q1", "ch": "a", "pose": "think", "dur": 1.6, "zh": "就这么简单？"},
+  {"id": "b1", "ch": "b", "zh": "{voice}配音时，{table}每个标记的时刻记进时间表。"},
+  {"id": "b2", "ch": "b", "padAfter": 0.3, "zh": "{scene}画面只认标记，{change}改稿重配音，画面自己跟上。"},
+  {"id": "c1", "ch": "c", "zh": "{cmd}一条命令，{steps}配音、渲染、混音、合成一路跑完。"},
+  {"id": "c2", "ch": "c", "zh": "{resume}渲染断了，{skip}重跑会接着往下渲。"},
+  {"id": "c3", "ch": "c", "padAfter": 0.2, "zh": "{review}最后自动抽帧，{probe}字出框、压字幕都会报。"},
+  {"id": "e1", "ch": "end", "zh": "{recap}记住：{r1}稿子带标记，{r2}画面对标记，{r3}一条命令出片。"},
+  {"bubble": "q2", "ch": "end", "pose": "victory", "dur": 1.8, "zh": "懒鱼！开工！"},
+  {"id": "e2", "ch": "end", "zh": "{group}想看更多教程，来群里聊，{like}顺手三连。"},
+  {"sting": "outro", "ch": "end", "dur": 8.4}
+ ]
+}

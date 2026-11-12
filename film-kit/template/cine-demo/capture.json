@@ -1,0 +1,32 @@
+{
+  "_说明": "镜头包陈列片（CineGallery）用的示例界面的截图清单，也是一份可以照抄的最小清单。跑法：在 template 目录下 node film/scripts/capture.mjs cine-demo/capture.json",
+  "entry": "web/index.html",
+  "out": "../film/public/cine-demo",
+  "meta": "../film/src/cine/demo/cap.json",
+  "viewport": {"width": 1240, "height": 780},
+  "scale": 3,
+  "settle": 600,
+  "palette": {
+    "bg": "var:--bg", "surface": "var:--surface", "line": "var:--line",
+    "text": "var:--text", "text2": "var:--text-2", "text3": "var:--text-3",
+    "accent": "var:--accent", "info": "var:--info"
+  },
+  "pages": [
+    {
+      "id": "board",
+      "elements": {
+        "logo": "#logo", "title": "#title", "chips": ".chip", "kpis": ".kpi", "values": ".kpi-value",
+        "rows": ".row", "form": "#form", "name": "#name", "dest": "#dest", "submit": "#submit"
+      },
+      "plates": [
+        {"id": "norows", "hide": [".row"]},
+        {"id": "novalues", "hide": [".kpi-value"]},
+        {"id": "blank", "css": "#name,#dest{color:transparent!important}"}
+      ],
+      "cutouts": [
+        {"key": "row", "sel": ".row", "pad": 6},
+        {"key": "chip", "sel": ".chip", "pad": 4}
+      ]
+    }
+  ]
+}

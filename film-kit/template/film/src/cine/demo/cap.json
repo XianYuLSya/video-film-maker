@@ -1,0 +1,501 @@
+{
+ "pages": {
+  "board": {
+   "id": "board",
+   "dir": "cine-demo",
+   "w": 1240,
+   "h": 780,
+   "scale": 3,
+   "file": "board.png",
+   "plates": {
+    "norows": "board@norows.png",
+    "novalues": "board@novalues.png",
+    "blank": "board@blank.png"
+   },
+   "elements": {
+    "logo": [
+     {
+      "x": 15,
+      "y": 18,
+      "w": 34,
+      "h": 34,
+      "text": "",
+      "fontSize": 14,
+      "fontWeight": "400",
+      "fontFamily": "\"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei UI\", system-ui, sans-serif",
+      "letterSpacing": "normal",
+      "lineHeight": "20.3px",
+      "color": "#1b2330",
+      "bg": "rgba(0,0,0,0)",
+      "radius": 10,
+      "padL": 0,
+      "padT": 0
+     }
+    ],
+    "title": [
+     {
+      "x": 94,
+      "y": 26,
+      "w": 1116,
+      "h": 37.7,
+      "text": "东区仓库",
+      "fontSize": 26,
+      "fontWeight": "700",
+      "fontFamily": "\"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei UI\", system-ui, sans-serif",
+      "letterSpacing": "-0.26px",
+      "lineHeight": "37.7px",
+      "color": "#1b2330",
+      "bg": "rgba(0,0,0,0)",
+      "radius": 0,
+      "padL": 0,
+      "padT": 0
+     }
+    ],
+    "chips": [
+     {
+      "x": 94,
+      "y": 73.7,
+      "w": 63,
+      "h": 26,
+      "text": "在线",
+      "fontSize": 12.5,
+      "fontWeight": "600",
+      "fontFamily": "\"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei UI\", system-ui, sans-serif",
+      "letterSpacing": "normal",
+      "lineHeight": "18.125px",
+      "color": "#55627a",
+      "bg": "#ffffff",
+      "radius": 13,
+      "padL": 11,
+      "padT": 0
+     },
+     {
+      "x": 165,
+      "y": 73.7,
+      "w": 87,
+      "h": 26,
+      "text": "上海 · 浦东",
+      "fontSize": 12.5,
+      "fontWeight": "600",
+      "fontFamily": "\"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei UI\", system-ui, sans-serif",
+      "letterSpacing": "normal",
+      "lineHeight": "18.125px",
+      "color": "#55627a",
+      "bg": "#ffffff",
+      "radius": 13,
+      "padL": 11,
+      "padT": 0
+     },
+     {
+      "x": 260,
+      "y": 73.7,
+      "w": 84,
+      "h": 26,
+      "text": "盘点 100%",
+      "fontSize": 12.5,
+      "fontWeight": "600",
+      "fontFamily": "\"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei UI\", system-ui, sans-serif",
+      "letterSpacing": "normal",
+      "lineHeight": "18.125px",
+      "color": "#2f6df6",
+      "bg": "#eef3ff",
+      "radius": 13,
+      "padL": 11,
+      "padT": 0
+     },
+     {
+      "x": 352,
+      "y": 73.7,
+      "w": 78,
+      "h": 26,
+      "text": "今日 3 班",
+      "fontSize": 12.5,
+      "fontWeight": "600",
+      "fontFamily": "\"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei UI\", system-ui, sans-serif",
+      "letterSpacing": "normal",
+      "lineHeight": "18.125px",
+      "color": "#55627a",
+      "bg": "#ffffff",
+      "radius": 13,
+      "padL": 11,
+      "padT": 0
+     }
+    ],
+    "kpis": [
+     {
+      "x": 94,
+      "y": 121.7,
+      "w": 268.5,
+      "h": 117,
+      "text": "今日出库\n1,284\n↑ 12.4%",
+      "fontSize": 14,
+      "fontWeight": "400",
+      "fontFamily": "\"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei UI\", system-ui, sans-serif",
+      "letterSpacing": "normal",
+      "lineHeight": "20.3px",
+      "color": "#1b2330",
+      "bg": "#ffffff",
+      "radius": 14,
+      "padL": 18,
+      "padT": 16
+     },
+     {
+      "x": 376.5,
+      "y": 121.7,
+      "w": 268.5,
+      "h": 117,
+      "text": "在库件数\n36,502\n↑ 2.1%",
+      "fontSize": 14,
+      "fontWeight": "400",
+      "fontFamily": "\"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei UI\", system-ui, sans-serif",
+      "letterSpacing": "normal",
+      "lineHeight": "20.3px",
+      "color": "#1b2330",
+      "bg": "#ffffff",
+      "radius": 14,
+      "padL": 18,
+      "padT": 16
+     },
+     {
+      "x": 659,
+      "y": 121.7,
+      "w": 268.5,
+      "h": 117,
+      "text": "准时率\n98.6%\n持平",
+      "fontSize": 14,
+      "fontWeight": "400",
+      "fontFamily": "\"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei UI\", system-ui, sans-serif",
+      "letterSpacing": "normal",
+      "lineHeight": "20.3px",
+      "color": "#1b2330",
+      "bg": "#ffffff",
+      "radius": 14,
+      "padL": 18,
+      "padT": 16
+     },
+     {
+      "x": 941.5,
+      "y": 121.7,
+      "w": 268.5,
+      "h": 117,
+      "text": "平均分拣\n4.2 分钟\n↓ 0.3",
+      "fontSize": 14,
+      "fontWeight": "400",
+      "fontFamily": "\"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei UI\", system-ui, sans-serif",
+      "letterSpacing": "normal",
+      "lineHeight": "20.3px",
+      "color": "#1b2330",
+      "bg": "#ffffff",
+      "radius": 14,
+      "padL": 18,
+      "padT": 16
+     }
+    ],
+    "values": [
+     {
+      "x": 113,
+      "y": 160.8,
+      "w": 230.5,
+      "h": 43.5,
+      "text": "1,284",
+      "fontSize": 30,
+      "fontWeight": "750",
+      "fontFamily": "\"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei UI\", system-ui, sans-serif",
+      "letterSpacing": "-0.6px",
+      "lineHeight": "43.5px",
+      "color": "#1b2330",
+      "bg": "rgba(0,0,0,0)",
+      "radius": 0,
+      "padL": 0,
+      "padT": 0
+     },
+     {
+      "x": 395.5,
+      "y": 160.8,
+      "w": 230.5,
+      "h": 43.5,
+      "text": "36,502",
+      "fontSize": 30,
+      "fontWeight": "750",
+      "fontFamily": "\"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei UI\", system-ui, sans-serif",
+      "letterSpacing": "-0.6px",
+      "lineHeight": "43.5px",
+      "color": "#1b2330",
+      "bg": "rgba(0,0,0,0)",
+      "radius": 0,
+      "padL": 0,
+      "padT": 0
+     },
+     {
+      "x": 678,
+      "y": 160.8,
+      "w": 230.5,
+      "h": 43.5,
+      "text": "98.6%",
+      "fontSize": 30,
+      "fontWeight": "750",
+      "fontFamily": "\"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei UI\", system-ui, sans-serif",
+      "letterSpacing": "-0.6px",
+      "lineHeight": "43.5px",
+      "color": "#1b2330",
+      "bg": "rgba(0,0,0,0)",
+      "radius": 0,
+      "padL": 0,
+      "padT": 0
+     },
+     {
+      "x": 960.5,
+      "y": 160.8,
+      "w": 230.5,
+      "h": 43.5,
+      "text": "4.2 分钟",
+      "fontSize": 30,
+      "fontWeight": "750",
+      "fontFamily": "\"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei UI\", system-ui, sans-serif",
+      "letterSpacing": "-0.6px",
+      "lineHeight": "43.5px",
+      "color": "#1b2330",
+      "bg": "rgba(0,0,0,0)",
+      "radius": 0,
+      "padL": 0,
+      "padT": 0
+     }
+    ],
+    "rows": [
+     {
+      "x": 113,
+      "y": 321.6,
+      "w": 630.6,
+      "h": 54,
+      "text": "A 排 · 常温\n纸品、日用\n正常",
+      "fontSize": 14,
+      "fontWeight": "400",
+      "fontFamily": "\"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei UI\", system-ui, sans-serif",
+      "letterSpacing": "normal",
+      "lineHeight": "20.3px",
+      "color": "#1b2330",
+      "bg": "#f4f8ff",
+      "radius": 11,
+      "padL": 12,
+      "padT": 0
+     },
+     {
+      "x": 113,
+      "y": 383.6,
+      "w": 630.6,
+      "h": 54,
+      "text": "B 排 · 常温\n小家电\n正常",
+      "fontSize": 14,
+      "fontWeight": "400",
+      "fontFamily": "\"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei UI\", system-ui, sans-serif",
+      "letterSpacing": "normal",
+      "lineHeight": "20.3px",
+      "color": "#1b2330",
+      "bg": "#fbfcfe",
+      "radius": 11,
+      "padL": 12,
+      "padT": 0
+     },
+     {
+      "x": 113,
+      "y": 445.6,
+      "w": 630.6,
+      "h": 54,
+      "text": "C 排 · 冷藏\n乳品、饮料\n将满",
+      "fontSize": 14,
+      "fontWeight": "400",
+      "fontFamily": "\"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei UI\", system-ui, sans-serif",
+      "letterSpacing": "normal",
+      "lineHeight": "20.3px",
+      "color": "#1b2330",
+      "bg": "#fbfcfe",
+      "radius": 11,
+      "padL": 12,
+      "padT": 0
+     },
+     {
+      "x": 113,
+      "y": 507.6,
+      "w": 630.6,
+      "h": 54,
+      "text": "D 排 · 贵重\n数码配件\n正常",
+      "fontSize": 14,
+      "fontWeight": "400",
+      "fontFamily": "\"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei UI\", system-ui, sans-serif",
+      "letterSpacing": "normal",
+      "lineHeight": "20.3px",
+      "color": "#1b2330",
+      "bg": "#fbfcfe",
+      "radius": 11,
+      "padL": 12,
+      "padT": 0
+     }
+    ],
+    "form": [
+     {
+      "x": 778.6,
+      "y": 254.7,
+      "w": 431.4,
+      "h": 323.9,
+      "text": "新建调拨单\n\n起个名字，选一个目的仓\n\n单名\n目的仓\n杭州 · 萧山 02\n南京 · 江宁 01\n创建调拨单",
+      "fontSize": 14,
+      "fontWeight": "400",
+      "fontFamily": "\"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei UI\", system-ui, sans-serif",
+      "letterSpacing": "normal",
+      "lineHeight": "20.3px",
+      "color": "#1b2330",
+      "bg": "#ffffff",
+      "radius": 14,
+      "padL": 18,
+      "padT": 16
+     }
+    ],
+    "name": [
+     {
+      "x": 797.6,
+      "y": 351.7,
+      "w": 393.4,
+      "h": 36,
+      "text": "周末补货",
+      "fontSize": 13.3333,
+      "fontWeight": "400",
+      "fontFamily": "\"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei UI\", system-ui, sans-serif",
+      "letterSpacing": "normal",
+      "lineHeight": "normal",
+      "color": "#1b2330",
+      "bg": "#ffffff",
+      "radius": 9,
+      "padL": 11,
+      "padT": 0
+     }
+    ],
+    "dest": [
+     {
+      "x": 797.6,
+      "y": 425.8,
+      "w": 393.4,
+      "h": 36,
+      "text": "杭州 · 萧山 02",
+      "fontSize": 13.3333,
+      "fontWeight": "400",
+      "fontFamily": "\"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei UI\", system-ui, sans-serif",
+      "letterSpacing": "normal",
+      "lineHeight": "normal",
+      "color": "#1b2330",
+      "bg": "#ffffff",
+      "radius": 9,
+      "padL": 11,
+      "padT": 0
+     }
+    ],
+    "submit": [
+     {
+      "x": 797.6,
+      "y": 479.8,
+      "w": 101,
+      "h": 38,
+      "text": "创建调拨单",
+      "fontSize": 13.3333,
+      "fontWeight": "400",
+      "fontFamily": "\"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei UI\", system-ui, sans-serif",
+      "letterSpacing": "normal",
+      "lineHeight": "normal",
+      "color": "#ffffff",
+      "bg": "#2f6df6",
+      "radius": 9,
+      "padL": 18,
+      "padT": 0
+     }
+    ]
+   },
+   "cuts": {
+    "row": [
+     {
+      "file": "board.row.0.png",
+      "x": 107,
+      "y": 315.6,
+      "w": 642.6,
+      "h": 66,
+      "text": "A 排 · 常温\n纸品、日用\n正常",
+      "scale": 4
+     },
+     {
+      "file": "board.row.1.png",
+      "x": 107,
+      "y": 377.6,
+      "w": 642.6,
+      "h": 66,
+      "text": "B 排 · 常温\n小家电\n正常",
+      "scale": 4
+     },
+     {
+      "file": "board.row.2.png",
+      "x": 107,
+      "y": 439.6,
+      "w": 642.6,
+      "h": 66,
+      "text": "C 排 · 冷藏\n乳品、饮料\n将满",
+      "scale": 4
+     },
+     {
+      "file": "board.row.3.png",
+      "x": 107,
+      "y": 501.6,
+      "w": 642.6,
+      "h": 66,
+      "text": "D 排 · 贵重\n数码配件\n正常",
+      "scale": 4
+     }
+    ],
+    "chip": [
+     {
+      "file": "board.chip.0.png",
+      "x": 90,
+      "y": 69.7,
+      "w": 71,
+      "h": 34,
+      "text": "在线",
+      "scale": 4
+     },
+     {
+      "file": "board.chip.1.png",
+      "x": 161,
+      "y": 69.7,
+      "w": 95,
+      "h": 34,
+      "text": "上海 · 浦东",
+      "scale": 4
+     },
+     {
+      "file": "board.chip.2.png",
+      "x": 256,
+      "y": 69.7,
+      "w": 92,
+      "h": 34,
+      "text": "盘点 100%",
+      "scale": 4
+     },
+     {
+      "file": "board.chip.3.png",
+      "x": 348,
+      "y": 69.7,
+      "w": 86,
+      "h": 34,
+      "text": "今日 3 班",
+      "scale": 4
+     }
+    ]
+   }
+  }
+ },
+ "palette": {
+  "bg": "#f3f5f8",
+  "surface": "#ffffff",
+  "line": "#dfe4ec",
+  "text": "#1b2330",
+  "text2": "#55627a",
+  "text3": "#8491a6",
+  "accent": "#2f6df6",
+  "info": "#0aa5a5"
+ }
+}

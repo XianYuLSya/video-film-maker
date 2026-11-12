@@ -1,0 +1,11 @@
+{
+ "_说明": "片场的本机配置。复制一份改名为 kit.local.json（它不进仓库），按自己的机器改。每一项都可以不写。",
+ "_说明_workRoot": "tools/new_film.py 开新片时工程建在哪（<workRoot>\\<作品名>）。不写就是片场下的 works\\。",
+ "workRoot": "D:\\videos\\work",
+ "_说明_outRoot": "成品目录的根（<outRoot>\\<作品名>）。不写就是片场下的 成品\\。",
+ "outRoot": "D:\\videos\\成品",
+ "_说明_filePrefix": "成片文件名的前缀，例如频道名加下划线。不写就没有前缀。",
+ "filePrefix": "我的频道_",
+ "_说明_browser": "渲染和截界面用的 chrome-headless-shell。不写就交给 Remotion 自己找（它会用 node_modules\\.remotion 里的，第一次可能要下载）。",
+ "browser": ""
+}
