@@ -7,5 +7,7 @@
  "_说明_filePrefix": "成片文件名的前缀，例如频道名加下划线。不写就没有前缀。",
  "filePrefix": "我的频道_",
  "_说明_browser": "渲染和截界面用的 chrome-headless-shell。不写就交给 Remotion 自己找（它会用 node_modules\\.remotion 里的，第一次可能要下载）。",
- "browser": ""
+ "browser": "",
+ "_说明_tempDir": "渲染进程的临时目录。渲染用的浏览器每开一次会留一个 puppeteer 配置目录，不会自己删；系统盘小就指到别的盘。片场每次开工会清掉这里放了六小时以上的东西，所以要给它一个专用的空目录。不写就用系统临时目录、也不清。",
+ "tempDir": ""
 }

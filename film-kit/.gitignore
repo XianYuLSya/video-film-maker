@@ -45,3 +45,6 @@ chunks_*/
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# 片场自己的渲染临时目录（kit.local.json 的 tempDir 常指到这里）
+.tmp/

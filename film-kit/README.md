@@ -17,7 +17,7 @@
 
 1. 装 Node.js（20 以上）、Python 3.11、FFmpeg（`ffmpeg`、`ffprobe` 要在 PATH 里）。
 2. 在片场根目录：`npm install`（装 Remotion 运行时到 `node_modules\`），`python -m venv .venv`，`.venv\Scripts\python.exe -m pip install -r requirements.txt`。
-3. 复制 `kit.local.example.json` 为 `kit.local.json`，改成自己的工程根、成品根、成片名前缀（都可以不写）。
+3. 复制 `kit.local.example.json` 为 `kit.local.json`，改成自己的工程根、成品根、成片名前缀（都可以不写）。**系统盘小的话把 `tempDir` 指到别的盘的一个专用空目录**（比如片场下的 `.tmp`）：渲染用的浏览器每开一次，就在临时目录留一个 `puppeteer_dev_chrome_profile-*`，不会自己删，抽帧、量版面、分段渲染各开各的，几天能攒出几十 G。配了 `tempDir` 以后，渲染进程的临时文件都写到那里，片场每次开工清掉放了六小时以上的；不配就照旧写系统临时目录、也不清。
 4. 照 [素材自备.md](素材自备.md) 把音效、配乐（和可选的片头片尾）放进 `local\`，再跑一次 `.venv\Scripts\python.exe tools\new_film.py --fill template` 把它们拷进模板。
 5. 模板自己的 `film\node_modules` 要是指向片场 `node_modules` 的目录联接：`New-Item -ItemType Junction -Path "template\film\node_modules" -Target "<片场>\node_modules"`。
 
@@ -41,7 +41,8 @@ film-kit\
 ├─ node_modules\           片场唯一的 Remotion 运行时（所有作品共用，新片用目录联接指过来）
 ├─ assets\                 每部片子都一样、可以随片场分发的公共素材（fonts / tex / char，各带一份来源说明）
 ├─ local\                  自备素材，不随片场分发（sfx / bgm / intro.mp4 / outro.mp4），见 素材自备.md
-├─ kit.local.json          本机配置（工程和成品放哪、成片名前缀、浏览器），不进仓库；样例 kit.local.example.json
+├─ kit.local.json          本机配置（工程和成品放哪、成片名前缀、浏览器、渲染临时目录 tempDir），不进仓库；样例 kit.local.example.json
+├─ .tmp\                   渲染临时目录（tempDir 指到这里时才有），不进仓库，片场自己按时间清
 ├─ tools\
 │   ├─ new_film.py         开新片（--kind product 开产品片）
 │   ├─ beat_probe.py       量一首曲子的拍长和第一拍；成片回测拍点

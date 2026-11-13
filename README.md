@@ -41,7 +41,8 @@ npm install
 python -m venv .venv
 .venv\Scripts\python.exe -m pip install -r requirements.txt
 
-# 3. 本机配置：工程根、成品根、成片名前缀、渲染浏览器（都可以不写）
+# 3. 本机配置：工程根、成品根、成片名前缀、渲染浏览器、渲染临时目录（都可以不写）
+#    系统盘小的话把 tempDir 指到别的盘的专用空目录：渲染浏览器留下的临时文件几天能攒几十 G
 Copy-Item kit.local.example.json kit.local.json
 ```
 

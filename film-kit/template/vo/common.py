@@ -377,10 +377,49 @@ def zh_len(text: str) -> float:
 
 
 # ───────── 跑外部命令 ─────────
+_TEMP_SWEPT = False
+
+
+def kit_temp() -> str:
+    """片场自己的临时目录（kit.local.json 的 tempDir）；没配就返回空串，照旧用系统临时目录。
+
+    渲染用的浏览器每开一次，就在临时目录留一个 puppeteer_dev_chrome_profile-*，进程被杀或崩了就不会删，
+    抽帧、量版面、分段渲染各开各的，几天能在系统盘攒出几十 G。指到这里以后，每次开工顺手清掉放了
+    六小时以上的（这个目录只归片场用，所以整目录按时间清）。"""
+    global _TEMP_SWEPT
+    d = str(kit_local().get('tempDir') or '').strip()
+    if not d:
+        return ''
+    try:
+        os.makedirs(d, exist_ok=True)
+    except OSError:
+        return ''
+    if not _TEMP_SWEPT:
+        _TEMP_SWEPT = True
+        cutoff = time.time() - 6 * 3600
+        try:
+            for e in os.scandir(d):
+                try:
+                    if e.stat(follow_symlinks=False).st_mtime >= cutoff:
+                        continue
+                    if e.is_dir(follow_symlinks=False):
+                        shutil.rmtree(e.path, ignore_errors=True)
+                    else:
+                        os.remove(e.path)
+                except OSError:
+                    pass
+        except OSError:
+            pass
+    return d
+
+
 def _env(extra=None) -> dict:
     env = os.environ.copy()
     env['PYTHONIOENCODING'] = 'utf-8'
     env['PYTHONUTF8'] = '1'
+    tmp = kit_temp()
+    if tmp:
+        env['TEMP'] = env['TMP'] = env['TMPDIR'] = tmp
     for k, v in (extra or {}).items():
         if v is None:
             env.pop(k, None)
