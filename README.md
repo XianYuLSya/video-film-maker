@@ -21,7 +21,7 @@
 
 ## 成片
 
-- 介绍这套 skill 的那期视频，从查流量、写稿、做画面到审片都是大肥鱼（DeepSeek V4.1 Flash）照这套 skill 做的：B 站搜「咸鱼凌生」，标题「你熬夜剪的视频，凭什么输给 AI 做的？」（上线后这里补链接）。
+- 介绍这套 skill 的那期视频，从查流量、写稿、做画面到审片都是大肥鱼（DeepSeek V4.1 Flash）照这套 skill 做的：[你熬夜剪的视频，凭什么输给 AI 做的？](https://www.bilibili.com/video/BV1EgWv6dEAP)（B 站，北京时间 2026-11-15 18:00 公开；YouTube：https://youtu.be/3bptzlOxnnI ）。
 - 更早用这套做法做的片子也在同一个频道主页。
 
 ## 怎么装
