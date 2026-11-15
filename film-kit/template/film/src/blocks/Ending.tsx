@@ -164,7 +164,7 @@ export type EndCardProps = {
   /** 署名和致谢出现的时刻，缺省 t0+0.8 */
   creditsAt?: number;
   mascot?: Pose;
-  /** 小咸鱼的气泡，缺省「下期见！」 */
+  /** 角色的气泡，缺省「下期见！」 */
   say?: string;
   /** 气泡出现的时刻，缺省 t0+0.8（想让它说稿子里的无声气泡，就传那个气泡的 start） */
   sayAt?: number;

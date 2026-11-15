@@ -14,7 +14,7 @@ import {edge} from './common';
 //   章节牌（ChapterTag）      过场推走时出现在左上角，整章常驻
 //   卡片排（CardRow）         四张卡，念到哪个词哪张卡弹出：
 //       a1 {line} 口播句   a1 {mark} 标记   a2 {bubble} 气泡   a2 {sting} 片头片尾
-//   气泡 q1（无声）           小咸鱼从左下角探出来说「就这么简单？」——它由 Film.tsx 统一画，
+//   气泡 q1（无声）           角色从左下角探出来说「就这么简单？」——它由 Film.tsx 统一画，
 //                            场景只负责让位：卡片在气泡出现前整体缩小、移到顶上（shrinkAt）。
 
 /** 范围：从过场开始（章节开始前 0.8 秒），画到下一章开始。下一章的过场会盖在上面，所以两幕重叠一点没关系 */
@@ -46,10 +46,10 @@ const cards = () => ({
   items: [
     {at: C('a1', 'line'), title: '口播句', desc: '一句一条，有 id 和章节', icon: 'chat', tone: 'sky' as const},
     {at: C('a1', 'mark'), title: '{标记}', desc: '念到这个词，画面就出来', icon: 'pin', tone: 'coral' as const, badge: '对点'},
-    {at: C('a2', 'bubble'), title: '无声气泡', desc: '小咸鱼说一句，不念', icon: 'sparkles', tone: 'sun' as const},
+    {at: C('a2', 'bubble'), title: '无声气泡', desc: '角色说一句，不念', icon: 'sparkles', tone: 'sun' as const},
     {at: C('a2', 'sting'), title: '片头片尾', desc: '频道通用，写一行就有', icon: 'play', tone: 'mint' as const},
   ],
-  // 气泡开始前 0.6 秒开始缩（缩完要 0.6 秒），小咸鱼探出来时下半屏已经空了
+  // 气泡开始前 0.6 秒开始缩（缩完要 0.6 秒），角色探出来时下半屏已经空了
   shrinkAt: bubble('q1').start - 0.6,
 });
 

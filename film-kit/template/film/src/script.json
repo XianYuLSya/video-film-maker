@@ -1,5 +1,5 @@
 {
- "about": "口播稿唯一正文。{名字} 是画面对点用的标记，念的时候去掉；bubble 是小咸鱼的无声气泡（不念，只显示，id 用 q 开头）；sting 是频道通用的片头片尾；padBefore / padAfter 是这句前后额外留的秒数。句子 id = 章节首字母 + 序号。改了这里要重跑 .\\film.cmd voice zh。",
+ "about": "口播稿唯一正文。{名字} 是画面对点用的标记，念的时候去掉；bubble 是角色的无声气泡（不念，只显示，id 用 q 开头）；sting 是频道通用的片头片尾；padBefore / padAfter 是这句前后额外留的秒数。句子 id = 章节首字母 + 序号。改了这里要重跑 .\\film.cmd voice zh。",
  "chapters": [
   {"id": "hook", "zh": "开场：这期讲什么"},
   {"id": "a", "zh": "一：稿子带标记"},

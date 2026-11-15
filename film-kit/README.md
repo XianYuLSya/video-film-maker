@@ -186,7 +186,7 @@ film-kit\
 ## 场景外壳画什么，bare（整屏自管）怎么用
 
 写场景时的默认前提：外壳 `film\src\Film.tsx` 统一画四样东西 —— 纸感底（`#F8F1E4` 底色加 `<Paper/>` 纸纹）、
-底部烧录字幕条（`<Subtitles/>`）、小咸鱼无声气泡（`<BubbleSlots/>`）、右上角「示意画面」角标
+底部烧录字幕条（`<Subtitles/>`）、角色无声气泡（`<BubbleSlots/>`）、右上角「示意画面」角标
 （`blocks\DemoMark`，场景用 `demo(t)` 声明哪一时刻要）。场景自己只画正文。
 
 深色底的品牌片、片头这类「整屏自己管」的场景，给 `Scene`（`scenes\common.tsx`）加 `bare: true`：
@@ -376,7 +376,7 @@ export const OpenScene: Scene = {id: 'open', range, C: OpenC, sfx: () => [], bar
 | `scenes\Script.tsx` | a 一：稿子带标记 | 换章过场切进来 → 章节牌常驻 → 三张卡讲「稿子带标记」；带一个无声气泡 | `ChapterBreak`、`ChapterTag`、`CardRow` |
 | `scenes\Sync.tsx` | b 二：画面对标记 | 流程图四节点依次点亮，最后盖章「不写死秒数」 | `ChapterBreak`、`ChapterTag`、`Flow`、`Stamp` |
 | `scenes\Run.tsx` | c 三：一条命令出片 | 操作演示：终端逐字敲命令、六行输出逐行出、断点续跑盖章；这一幕带「示意画面」角标（`demo(t)`） | `ChapterBreak`、`ChapterTag`、`Terminal`、`CheckList`、`PointNote`、`Stamp` |
-| `scenes\End.tsx` | end 收尾 | 三条要点逐条打勾 → 大号小咸鱼喊口号 → 片尾卡 → 通用片尾 | `Recap`、`EndCard` |
+| `scenes\End.tsx` | end 收尾 | 三条要点逐条打勾 → 大号角色喊口号 → 片尾卡 → 通用片尾 | `Recap`、`EndCard` |
 
 每个场景文件都是同一个骨架，抄就照这个顺序：`range()` 定这一幕时间 → 每块积木一个 props 函数 →
 组件（最外层 `edge()` 淡入淡出）→ `sfx()` 展开音效 → 导出 `Scene`。

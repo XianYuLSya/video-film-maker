@@ -68,5 +68,5 @@ export const typeDone = (text: string, t0: number, cps = 16) => t0 + Array.from(
 /** 光标闪烁 */
 export const blink = (t: number) => (Math.floor(t * 1.9) % 2 === 0 ? 1 : 0);
 
-/** 循环里的手绘抖动帧（小咸鱼三张图轮换，每秒 8 次） */
+/** 循环里的手绘抖动帧（角色三张图轮换，每秒 8 次） */
 export const boil = (t: number, n = 3, rate = 8) => Math.floor(t * rate) % n;

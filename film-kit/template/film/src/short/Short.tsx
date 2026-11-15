@@ -15,7 +15,7 @@ import {C, E, S, TOTAL_S, allSubs, bubbles} from './timeShort';
 //   s2 {proof}{cmd}     终端敲出 .\film.cmd all short —— 这条短片就是这么出来的（Terminal 竖屏）
 //   s3 {mark}{sync}     稿子 → 时间表 → 画面，竖排流程图（Flow 竖屏）
 //   s4 {resume}{probe}  两条打勾（CheckList 竖屏）
-//   s5 {more}{group}    片尾卡：群号；气泡 q1 由片尾卡里的小咸鱼说出来（EndCard 竖屏）
+//   s5 {more}{group}    片尾卡：群号；气泡 q1 由片尾卡里的角色说出来（EndCard 竖屏）
 //
 // 和正片的三个区别：
 //   1. 时间一律从 ./timeShort 取（短版自己的时间表），不能拿正片的 lib/time 对点。
@@ -93,7 +93,7 @@ const checks = () => ({
   vertical: true,
 });
 
-/** 片尾卡：气泡 q1 的文字和时刻都从时间表取，交给片尾卡里的小咸鱼说 */
+/** 片尾卡：气泡 q1 的文字和时刻都从时间表取，交给片尾卡里的角色说 */
 const endCard = () => {
   const q = bubbles().find((b) => b.id === 'q1');
   return {

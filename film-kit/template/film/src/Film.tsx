@@ -7,7 +7,7 @@ import {Ev, SfxTrack} from './kit/sfx';
 import {items} from './lib/time';
 import {SCENES} from './scenes';
 
-// 正片：纸底 + 各章场景 + 小咸鱼气泡 + 字幕 + 通用片头片尾。
+// 正片：纸底 + 各章场景 + 角色气泡 + 字幕 + 通用片头片尾。
 // 场景自己不画面具和字幕，都在这儿统一叠加，顺序就是图层顺序（后面的画在上面）。
 //
 // 例外是「整屏自管」的场景（Scene.bare: true，深色底的品牌片用）：当前时刻生效的场景里

@@ -61,7 +61,7 @@ export const Subtitles: React.FC<{t: number}> = ({t}) => {
   );
 };
 
-// ───────── 小咸鱼 ─────────
+// ───────── 角色 ─────────
 export const POSES: Record<string, {w: number; h: number}> = {
   think: {w: 1016, h: 1275},
   peek: {w: 1075, h: 1184},
@@ -123,7 +123,7 @@ export const Bubble: React.FC<{text: string; vis: number; tail?: 'left' | 'right
   );
 };
 
-/** 无声气泡时段：小咸鱼从左下角探出来说一句（q2 是片尾那只大的） */
+/** 无声气泡时段：角色从左下角探出来说一句（q2 是片尾那只大的） */
 export const BubbleSlots: React.FC<{t: number}> = ({t}) => {
   const b = bubbles().find((x) => t >= x.start - 0.1 && t <= x.end + 0.5);
   if (!b) return null;

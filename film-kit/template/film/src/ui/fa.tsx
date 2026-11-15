@@ -9,7 +9,7 @@ export const FA_H = 900;
 export const SIDE_W = 76;
 export const X0 = 116; // 内容左边
 
-/** 睡觉的小咸鱼（FAswitch 的标，照录屏手绘） */
+/** 睡觉的鱼（FAswitch 的标，照录屏手绘） */
 export const SleepyFish: React.FC<{w?: number; color?: string}> = ({w = 44, color = '#3A3F4B'}) => (
   <svg width={w} height={w * 0.5} viewBox="0 0 88 44" style={{display: 'block'}}>
     <path

@@ -20,7 +20,7 @@ export type HookProps = {
   lines: HookLine[];
   /** 落点：片名或一句承诺。到 at 时前面的痛点收走，落点大字砸到正中 */
   land?: {at: number; text: string; sub?: string};
-  /** 落点时右下角探出的小咸鱼 */
+  /** 落点时右下角探出的角色 */
   mascot?: Pose;
   vertical?: boolean;
 };
@@ -128,7 +128,7 @@ export type TitleCardProps = {
   sub?: string;
   /** 片名上方的小标签，如「AI 工具教程 · 第 3 期」 */
   kicker?: string;
-  /** 小咸鱼姿势（和 char 二选一） */
+  /** 角色姿势（和 char 二选一） */
   mascot?: Pose;
   /** 角色图：public 下路径或三帧 */
   char?: {src?: string; frames?: string[]; h?: number};

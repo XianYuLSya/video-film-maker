@@ -311,7 +311,7 @@ export const burstSfx = (p: {at: number}): Ev[] => [
   {at: p.at + 0.02, k: 'bass', vol: 0.3},
 ];
 
-// ───────── 小咸鱼吉祥物（带具名站位） ─────────
+// ───────── 角色贴纸（带具名站位） ─────────
 export type Pose = 'think' | 'peek' | 'read' | 'victory' | 'wave' | 'point' | 'face_shock' | 'flip' | 'toolbox' | 'explore' | 'fish_happy' | 'face_smug';
 export type MascotSpot = 'left-bottom' | 'right-bottom' | 'right' | 'left';
 export type MascotSayProps = {
@@ -327,7 +327,7 @@ export type MascotSayProps = {
   h?: number;
   vertical?: boolean;
 };
-/** 小咸鱼：从画面边上弹出来，可带一句气泡 */
+/** 角色：从画面边上弹出来，可带一句气泡 */
 export const MascotSay: React.FC<MascotSayProps> = ({t, t0, t1, pose = 'point', spot = 'right-bottom', say, sayAt, h, vertical}) => {
   const v = vis(t, t0, t1);
   if (v <= 0) return null;
